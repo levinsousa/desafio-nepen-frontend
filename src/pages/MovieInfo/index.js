@@ -10,7 +10,7 @@ export default function MovieList()  {
 
   useEffect(()=>{
     
-    api.get('/api').then(res => res.data).then(res => setMovie(res.movies[id]))
+    api.get(`/movie/${id}`).then(res => res.data).then(res => setMovie(res))
   
   }, [])
 
@@ -24,7 +24,7 @@ export default function MovieList()  {
         </div>
       </header>
       <main className={styles.movieBody}>
-          <img src="https://img.elo7.com.br/product/original/23646C7/big-poster-filme-capita-marvel-tamanho-90x60-cm-presente-geek.jpg" alt="Capa do filme - " className={styles.posterImage} />
+          <img src={movie.urlPoster} alt={`Capa do filme - ${movie.title}`}  className={styles.posterImage} />
         <div className={styles.movieInfo}>
           <h2 className={styles.movieName}>{String(movie.title)}</h2>
           <p className={styles.movieDuration}>{String(movie.duration)}</p>
