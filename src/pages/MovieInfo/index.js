@@ -1,7 +1,19 @@
 import styles from "./styles.module.css"
+import { useParams } from "react-router-dom"
+import api from "../../services/server"
+import { useEffect, useState } from "react"
 
 export default function MovieList()  {
+  const {id} = useParams()
   
+  const [movie, setMovie] = useState([])
+
+  useEffect(()=>{
+    
+    api.get('/api').then(res => res.data).then(res => setMovie(res.movies[id]))
+  
+  }, [])
+
   return (
     <div className={styles.MovieList}>
       <header className={styles.header}>
@@ -14,10 +26,10 @@ export default function MovieList()  {
       <main className={styles.movieBody}>
           <img src="https://img.elo7.com.br/product/original/23646C7/big-poster-filme-capita-marvel-tamanho-90x60-cm-presente-geek.jpg" alt="Capa do filme - " className={styles.posterImage} />
         <div className={styles.movieInfo}>
-          <h2 className={styles.movieName}>Título do filme</h2>
-          <p className={styles.movieDuration}>1:20:00</p>
-          <p className={styles.movieYear}>2017</p>
-          <p className={styles.movieDescription}>Descrição do filme</p>
+          <h2 className={styles.movieName}>{String(movie.title)}</h2>
+          <p className={styles.movieDuration}>{String(movie.duration)}</p>
+          <p className={styles.movieYear}>{String(movie.yearMovie)}</p>
+          <p className={styles.movieDescription}>{String(movie.description)}</p>
 
           <hr className={styles.contentDivider}/>
 
