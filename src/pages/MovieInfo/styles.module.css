@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700&family=Konkhmer+Sleokchher&display=swap');
+
+.MovieInfo{
+  width: 100%;
+}
+
+.header{
+  width: 100vw;
+  background-color: #111;
+  box-shadow: 0px 4px 40px rgba(255, 255, 255, 0.15);
+  margin: 0;
+  padding: 8pt 12pt;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.header span{
+  font-size: 36pt;
+  font-family: 'Konkhmer Sleokchher', cursive;
+  color: white;
+}
+
+.searchBox{
+  border: red solid 1px;
+  color: whitesmoke;
+  background-color: #111;
+
+  font-size: 12pt;
+  font-family: 'Konkhmer Sleokchher', cursive;
+
+  padding: 8pt;
+  margin-right: 8pt;
+  border-radius: 2pt;
+}
+
+.searchButton {
+  color: white;
+  background-color: red;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 12pt;
+
+  padding: 8pt;
+  border-radius: 2pt;
+  margin-right: 8pt;
+}
+
+.movieBody{
+  background-color: #111;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  margin-top: 50pt;
+  padding: 80pt 120pt;
+}
+
+.movieInfo{
+  border: red solid 1px;
+
+  flex: 1;
+
+  padding: 12pt;
+  margin-left: 20pt;
+  border-radius: 10pt;
+}
+
+.posterImage{
+  width: 200pt;
+  margin-top: -20pt;
+}
+
+.movieName{
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 24pt;
+  
+  margin-bottom: 10pt;
+}
+
+.movieDuration{
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 10pt;
+
+  margin-bottom: 12pt;
+}
+
+.movieYear{
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 10pt;
+
+  margin-bottom: 12pt;
+}
+
+.movieDescription{
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 12pt;
+
+  margin-bottom: 20pt;
+}
+
+.contentDivider {
+  border: white solid 1px;
+  margin-bottom: 20pt;
+}
+
+.avaliationHallTitle {
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 16pt;
+  
+  margin-bottom: 6pt;
+}
+
+.avaliationHallSubTitle{
+  color: white;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 10pt;
+  
+  margin-bottom: 10pt;
+}
+
+.avaliationInput{
+  border: red solid 1px;
+  color: whitesmoke;
+  background-color: #111;
+  width: 100%;
+  height: 60pt;
+
+  font-size: 10pt;
+  font-family: 'Konkhmer Sleokchher', cursive;
+
+  padding: 8pt;
+  margin-right: 8pt;
+  border-radius: 2pt;
+}
+
+.avaliationSend {
+  color: white;
+  background-color: red;
+
+  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 12pt;
+
+  padding: 8pt;
+  border-radius: 2pt;
+  margin-right: 8pt;
+}
