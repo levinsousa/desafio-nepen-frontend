@@ -1,83 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700&family=Konkhmer+Sleokchher&display=swap');
-
-
-.header{
-  width: 100vw;
-  background-color: #111;
-  box-shadow: 0px 4px 40px rgba(255, 255, 255, 0.15);
-  margin: 0;
-  padding: 8pt 12pt;
+.addMovieBody{
+  overflow-x: hidden;
+  margin-top: 140pt;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0;
-}
-
-.header span{
-  font-size: 36pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-  color: white;
+  flex-direction: column;
 }
 
 .addMovieForm{
-  background-color: #111;
-  overflow-x: hidden;
+  background-color: #1F2937;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50pt;
-  padding: 80pt 120pt;
+  width: 580pt;
+  padding: 24pt;
+  border-radius: 20pt;
+  margin-bottom: 40pt;
 }
 
 .addMovieH1{
   color: white;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 24pt;
   
   margin-bottom: 6pt;
 }
 
 .addMovieLabel{
   color: white;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 16pt;
   
   margin-top: 20pt;
   margin-bottom: 10pt;
 }
 
 .addMovieInput{
-  border: red solid 1px;
+  border: #E1E1E6 solid 1px;
+  padding: 8pt 8pt;
+  border-radius: 6pt;
   color: whitesmoke;
-  background-color: #111;
-  width: 100%;
-  height: 60pt;
+  background: none;
+  width: 300pt;
+  height: 52pt;
 
-  font-size: 10pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-
-  padding: 8pt;
   margin-right: 8pt;
-  border-radius: 2pt;
 }
 
 .addMovieTextarea{
-  border: red solid 1px;
+  border: #E1E1E6 solid 1px;
+  padding: 8pt 8pt;
+  border-radius: 6pt;
   color: whitesmoke;
-  background-color: #111;
-  width: 100%;
-  height: 120pt;
+  background: none;
+  width: 300pt;
+  height: 100pt;
 
   font-size: 10pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
 
-  padding: 8pt;
   margin-right: 8pt;
-  border-radius: 2pt;
 }
 
 .addMovieSend{
@@ -85,7 +63,18 @@
   color: white;
   background-color: red;
 
-  font-family: 'Konkhmer Sleokchher', cursive;
+  font-size: 12pt;
+
+  padding: 8pt;
+  border-radius: 2pt;
+  margin-top: 20pt;
+}
+
+.cancelButton{
+  text-decoration: none;
+  color: red;
+  border: red solid 1px;
+
   font-size: 12pt;
 
   padding: 8pt;
