@@ -4,53 +4,7 @@
   width: 100%;
 }
 
-.header{
-  width: 100vw;
-  background-color: #111;
-  box-shadow: 0px 4px 40px rgba(255, 255, 255, 0.15);
-  margin: 0;
-  padding: 8pt 12pt;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-}
-
-.header span{
-  font-size: 36pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-  color: white;
-}
-
-.header .loginButton{
-  text-decoration: none;
-  color: white;
-  background-color: red;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 12pt;
-
-  padding: 8pt;
-  border-radius: 2pt;
-  margin-right: 8pt;
-}
-
-
-.header .registerButton {
-  text-decoration: none;
-  color: red;
-  border: red solid 1px;
-
-  font-size: 12pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-
-  padding: 8pt;
-  border-radius: 2pt;
-}
-
 .homeBody{
-  background-color: #111;
   overflow-x: hidden;
   height: 100vh;
   display: flex;
@@ -59,12 +13,3 @@
   flex-direction: column;
 }
 
-.homeBody h1{
-  color: white;
-  font-family: 'Konkhmer Sleokchher', cursive;
-}
-
-.homeBody p{
-  color: white;
-  font-family: 'Konkhmer Sleokchher', cursive;
-}

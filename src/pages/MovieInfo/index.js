@@ -2,6 +2,9 @@ import styles from "./styles.module.css"
 import { Link, useParams } from "react-router-dom"
 import api from "../../services/server"
 import { useEffect, useState } from "react"
+import HeaderComponent from "../../components/HeaderComponent";
+import searchIcon from '../../resources/icons/search_icon.svg'
+
 
 export default function MovieList()  {
   const {id} = useParams()
@@ -22,6 +25,9 @@ export default function MovieList()  {
   
   }, [])
 
+  async function deleteMovie(){
+    await api.delete(`movie/${id}`)
+  }
 
   async function addComment(){
     console.log({commentValue, userId, id})
@@ -30,19 +36,31 @@ export default function MovieList()  {
     })
   }
 
+  async function deleteComment(commentId){
+    console.log({commentValue, userId, id})
+    await api.delete(`/comment/${commentId}`)
+  }
+
   return (
     <div className={styles.MovieList}>
-      <header className={styles.header}>
-        <span className={styles.headerTitle}> JaVi Pop </span>
-        <div>
-          <input type="text" placeholder="Pesquisa" className={styles.searchBox} />
-          <button className={styles.searchButton}>Buscar</button>
+      <HeaderComponent>
+        <div className={styles.searchBox}>
+          <input type="text" placeholder="Pesquisa" />
+          <img className={styles.searchButton} src={searchIcon} alt="Ícone de pesquisa" />
         </div>
-      </header>
+      </HeaderComponent>
       <main className={styles.movieBody}>
-          <img src={movie.urlPoster} alt={`Capa do filme - ${movie.title}`}  className={styles.posterImage} />
+        <Link to={'/movies'} style={{marginRight: '20pt'}} ><h3>Voltar</h3></Link>
+        <img src={movie.urlPoster} alt={`Capa do filme - ${movie.title}`}  className={styles.posterImage} />
         <div className={styles.movieInfo}>
-          <h2 className={styles.movieName}>{String(movie.title)}</h2>
+          <div className={styles.headerMovieInfo}>
+            <h2 className={styles.movieName}>{String(movie.title)}</h2>
+            <div className={styles.buttons}>
+              <Link to={`/movie/edit/${id}`}>Editar</Link>
+              <p>|</p>
+              <Link to={'/movies'} onClick={() => deleteMovie()}>Excluir</Link>
+            </div>
+          </div>
           <p className={styles.movieDuration}>{String(movie.duration)}</p>
           <p className={styles.movieYear}>{String(movie.yearMovie)}</p>
           <p className={styles.movieDescription}>{String(movie.description)}</p>
@@ -50,7 +68,7 @@ export default function MovieList()  {
           <hr className={styles.contentDivider}/>
 
           <div className={styles.avaliationHall}>
-            <h2 className={styles.avaliationHallTitle}>E você, já assistiu a esse filme? Deixe sua avaliação pessoal</h2>
+            <h3 className={styles.avaliationHallTitle}>E você, já assistiu a esse filme? Deixe sua avaliação pessoal</h3>
             <p className={styles.avaliationHallSubTitle}>Não se preucupe, só você pode ver :D</p>
             <textarea
               rows={5}
@@ -59,11 +77,14 @@ export default function MovieList()  {
             />
             <Link onClick={() => addComment()} className={styles.avaliationSend}>Enviar</Link>
 
+            <h3 className={styles.avaliationHallTitle}>Avaliações</h3>
+
             { hasComment && comment.map( comment => (
               <div key={comment._id}>
-                <h2 className={styles.avaliationHallTitle}>Avaliações</h2>
-                <p className={styles.avaliationHallSubTitle}>{comment.comment}</p>
-
+                <div className={styles.comment}>
+                  <p className={styles.avaliationHallSubTitle}>{comment.comment}</p>
+                  <Link onClick={() => deleteComment(comment._id)} style={{marginLeft: '12pt'}}><p>Excluir</p></Link>
+                </div>
                 <hr className={styles.contentDivider}/>
               </div>
             ))}

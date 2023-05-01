@@ -1,6 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body{
+  background-color: #111827;
+}
+
+h1{
+  font-size: 32pt;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  padding: 8pt 4pt;
+}
+
+h2{
+  font-size: 24pt;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  color: #E1E1E6;
+  padding: 4pt 4pt;
+}
+
+h3{
+  font-size: 16pt;
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  color: #E1E1E6;
+  padding: 4pt 4pt;
+}
+
+p{
+  font-size: 12pt;
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  color: #C4C4CC;
+  padding: 4pt 4pt;
+}
+
+input{
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14pt;
+}
+
+a, Link{
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+}

@@ -4,55 +4,51 @@
   width: 100%;
 }
 
-.header{
-  width: 100vw;
-  background-color: #111;
-  box-shadow: 0px 4px 40px rgba(255, 255, 255, 0.15);
-  margin: 0;
-  padding: 8pt 12pt;
-  display: flex;
+.searchBox{
+  border: #E1E1E6 solid 1px;
+  padding: 8pt 8pt;
+  border-radius: 6pt;
+  max-width: 60rem;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
 }
 
-.header span{
-  font-size: 36pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-  color: white;
-}
-
-.searchBox{
-  border: red solid 1px;
+.searchBox input{
   color: whitesmoke;
-  background-color: #111;
+  background: none;
+  border: none;
+  flex: 1;
+}
 
-  font-size: 12pt;
-  font-family: 'Konkhmer Sleokchher', cursive;
-
-  padding: 8pt;
-  margin-right: 8pt;
-  border-radius: 2pt;
+.searchBox a{
+  margin: 0;
 }
 
 .searchButton {
-  color: white;
-  background-color: red;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 12pt;
-
-  padding: 8pt;
-  border-radius: 2pt;
+  width: 14pt;
   margin-right: 8pt;
 }
 
+.searchButton:hover{
+  cursor: pointer;
+}
+
 .movieListBody{
-  background-color: #111;
   margin-top: 80pt;
   padding: 20pt 20pt;
   min-height: 100vh;
+}
+
+.movieListBody .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10pt 10pt;
+}
+
+.movieListBody .movies{
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -62,39 +58,32 @@
 }
 
 .movieCard{
-  border: red solid 1px;
-
   padding: 12pt;
-  margin-right: 8pt;
-  border-radius: 10pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .posterImage{
-  width: 150pt
+  width: 150pt;
+  margin-bottom: 8pt;
 }
 
 .movieName{
   color: white;
   text-align: center;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 12pt;
 }
 
 .movieDuration{
   color: white;
   text-align: center;
 
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 10pt;
 }
 
 .movieYear{
   color: white;
   text-align: center;
-
-  font-family: 'Konkhmer Sleokchher', cursive;
-  font-size: 10pt;
 }
 
 
