@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import api from "../../services/server"
 import { useEffect, useState } from "react"
 
@@ -7,12 +7,28 @@ export default function MovieList()  {
   const {id} = useParams()
   
   const [movie, setMovie] = useState([])
-
+  const [hasComment, setHascomment] = useState(false)
+  const [commentValue, setCommentValue] = useState([])
+  const [comment, setComment] = useState([])
+  const userId = "KJAS874"
+  
   useEffect(()=>{
     
-    api.get(`/movie/${id}`).then(res => res.data).then(res => setMovie(res))
+    api.get(`/movie/${id}`).then(res => res.data).then(movie => setMovie(movie))
+    api.get(`/comment/?movieId=${id}&userId=${userId}`).then(res => res.data).then(comment => {
+      setComment(comment)
+      setHascomment(true)
+    })
   
   }, [])
+
+
+  async function addComment(){
+    console.log({commentValue, userId, id})
+    await api.post('/comment', {
+      comment: commentValue, userId, movieId: id
+    })
+  }
 
   return (
     <div className={styles.MovieList}>
@@ -39,8 +55,18 @@ export default function MovieList()  {
             <textarea
               rows={5}
               className={styles.avaliationInput}
+              onChange={(e) => setCommentValue(e.target.value)}
             />
-            <button className={styles.avaliationSend}>Enviar</button>
+            <Link onClick={() => addComment()} className={styles.avaliationSend}>Enviar</Link>
+
+            { hasComment && comment.map( comment => (
+              <div key={comment._id}>
+                <h2 className={styles.avaliationHallTitle}>Avaliações</h2>
+                <p className={styles.avaliationHallSubTitle}>{comment.comment}</p>
+
+                <hr className={styles.contentDivider}/>
+              </div>
+            ))}
           </div>
         </div>
       </main>
