@@ -7,8 +7,7 @@ import { Link, useParams } from 'react-router-dom';
 
 export default function EditMovie(){
   const {id} = useParams()
-
-  const [ movie, setMovie ] = useState()
+  
   const [ title, setTitle ] = useState('')
   const [ duration, setDuration ] = useState('')
   const [ yearMovie, setYearMovie ] = useState()

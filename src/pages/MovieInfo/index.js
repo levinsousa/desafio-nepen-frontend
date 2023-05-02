@@ -3,14 +3,12 @@ import { Link, useParams } from "react-router-dom"
 import api from "../../services/server"
 import { useEffect, useState } from "react"
 import HeaderComponent from "../../components/HeaderComponent";
-import searchIcon from '../../resources/icons/search_icon.svg'
 
 
 export default function MovieList()  {
   const {id} = useParams()
   
   const [movie, setMovie] = useState([])
-  const [hasComment, setHascomment] = useState(false)
   const [commentValue, setCommentValue] = useState([])
   const [comment, setComment] = useState([])
   const userId = "KJAS874"
@@ -20,7 +18,6 @@ export default function MovieList()  {
     api.get(`/movie/${id}`).then(res => res.data).then(movie => setMovie(movie))
     api.get(`/comment/?movieId=${id}&userId=${userId}`).then(res => res.data).then(comment => {
       setComment(comment)
-      setHascomment(true)
     })
   
   }, [])
@@ -44,10 +41,6 @@ export default function MovieList()  {
   return (
     <div className={styles.MovieList}>
       <HeaderComponent>
-        <div className={styles.searchBox}>
-          <input type="text" placeholder="Pesquisa" />
-          <img className={styles.searchButton} src={searchIcon} alt="Ícone de pesquisa" />
-        </div>
       </HeaderComponent>
       <main className={styles.movieBody}>
         <Link to={'/movies'} style={{marginRight: '20pt'}} ><h3>Voltar</h3></Link>
@@ -79,7 +72,7 @@ export default function MovieList()  {
 
             <h3 className={styles.avaliationHallTitle}>Avaliações</h3>
 
-            { hasComment && comment.map( comment => (
+            { comment && comment.map( comment => (
               <div key={comment._id}>
                 <div className={styles.comment}>
                   <p className={styles.avaliationHallSubTitle}>{comment.comment}</p>
