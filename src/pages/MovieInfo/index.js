@@ -20,7 +20,7 @@ export default function MovieList()  {
       setComment(comment)
     })
   
-  }, [])
+  }, [addComment, deleteComment])
 
   async function deleteMovie(){
     await api.delete(`movie/${id}`)
