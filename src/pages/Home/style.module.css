@@ -5,6 +5,8 @@
 }
 
 .homeBody{
+  background: url('https://www.cafehistoria.com.br/wp-content/uploads/2023/03/nada-de-novo-no-front-5-curiosidades-incriveis-sobre-esse-grande-filme-da-netflix.jpeg') no-repeat;
+  background-size: cover;
   overflow-x: hidden;
   height: 100vh;
   display: flex;
@@ -13,3 +15,18 @@
   flex-direction: column;
 }
 
+h1,h2,h3,p{
+  text-shadow:  10px 10px 10px black;
+}
+
+.homeButton{
+  color: white;
+  background-color: #DC2626;
+
+  font-size: 16pt;
+  font-weight: 500;
+
+  margin-top: 20pt;
+  padding: 8pt;
+  border-radius: 2pt;
+}
