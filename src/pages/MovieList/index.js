@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState , useEffect, useCallback } from 'react'
 import api from "../../services/server"
 import HeaderComponent from "../../components/HeaderComponent";
+import LoadingComponent from "../../components/LoadingComponent";
 import searchIcon from '../../resources/icons/search_icon.svg'
 import { debounce } from 'lodash';
 
@@ -10,10 +11,14 @@ import { debounce } from 'lodash';
 export default function MovieList()  {
   const [movies, setMovies] = useState([])
   const [search, setSearch] = useState('')
+  const [loading, setLoading] = useState(true)
 
   useEffect(()=>{
     
-    api.get(`/movies?search=${search}`).then(res => res.data).then(res => setMovies(res))
+    api.get(`/movies?search=${search}`).then(res => res.data).then(res => {
+      setMovies(res)
+      setLoading(false)
+    })
   
   }, [search])
 
@@ -39,7 +44,8 @@ export default function MovieList()  {
         </div>
       </HeaderComponent>
 
-      <main className={styles.movieListBody}>
+      {loading && <LoadingComponent />}
+      {!loading && <main className={styles.movieListBody}>
         <div className={styles.header}>
           <h2>Últimos filmes adicionados</h2>
           <Link to={`/movie/add`}><h3>Adicionar um novo filme +</h3></Link>
@@ -54,7 +60,7 @@ export default function MovieList()  {
             </Link>
           ))}
         </div>
-      </main>
+      </main>}
     </div>
   )
 }
