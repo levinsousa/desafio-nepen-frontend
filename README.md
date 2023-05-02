@@ -53,8 +53,6 @@
    - Clone este repositório:
    $ git clone https://github.com/levinsousa/desafio-nepen-frontend.git
 
-   $ git submodule update --init
-
   ```
   - Front-end
 
