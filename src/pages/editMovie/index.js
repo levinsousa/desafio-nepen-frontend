@@ -2,11 +2,12 @@ import { useEffect,useState } from 'react'
 import styles from './styles.module.css'
 import api from '../../services/server'
 import HeaderComponent from "../../components/HeaderComponent";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
 export default function EditMovie(){
   const {id} = useParams()
+  const navigate = useNavigate()
   
   const [ title, setTitle ] = useState('')
   const [ duration, setDuration ] = useState('')
@@ -25,10 +26,9 @@ export default function EditMovie(){
   }, [])
 
   async function editMovieHandle(){
-    console.log({title, duration, yearMovie, description, urlPoster})
     await api.patch(`/movie/${id}`, {title, duration, yearMovie, description, urlPoster})
-      .then(e => console.log("Edição realizado com sucesso!"))
-      .catch(error => console.error(error))
+    alert("Edição realizado com sucesso!")
+    navigate('/movies')
   }
 
   return(
@@ -49,7 +49,7 @@ export default function EditMovie(){
           <textarea value={description} onChange={(e)=> setDescription(e.target.value)} id="descriptionMovie" rows="10" className={styles.editMovieTextarea} />
           <label htmlFor="urlPoster" className={styles.editMovieLabel}><h3>Link do Poster do filme</h3></label>
           <input value={urlPoster} onChange={(e)=> setUrlPoster(e.target.value)} type="text" id='urlPoster' placeholder='https://...' className={styles.editMovieInput} />
-          <Link to={'/movies'} onClick={() => editMovieHandle()} className={styles.editMovieSend}>Salvar modificações</Link>
+          <button type="submit" onClick={() => editMovieHandle()} className={styles.editMovieSend}>Salvar modificações</button>
           <Link to={'/movies'} className={styles.cancelButton}>Cancelar</Link>
         </div>
       </main>
