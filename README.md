@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<h1 align="center">"Desafio NEPEN"</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 align="center">Sobre 📖</h2>
+   
+   <p align="center">
+      O projeto foi proposto pela <a href="http://www.nepen.org.br">NEPEN</a>, como forma de testar minha maneira de pensar e resolver problemas.<br>
+      O projeto se trata de um lugar onde podemos adicionar nossos filmes favoritos ou filmes que desejamos assistir e podemos escrever análises sobre eles. 😄<br>
+      
+   </p>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+<h2 align="center">Layout 🎨</h2>
 
-### `npm start`
+   <p align="center">
+      O layout foi desenvolvido por Levi N. Sousa. 🖥️
+   </p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2 align="center">Funcionalidades 🛠️</h2>
 
-### `npm test`
+- Armazenar dados em um novo filme.
+- Recuperar dados de um filme que existe na biblioteca.
+- Remover filmes existentes.
+- Pesquisa e editar filmes existentes.
+- Realizar comentários.
+- Remover comentários existentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+<h2 align="center">Tecnologias 🚀</h2>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Axios](https://axios-http.com/ptbr/)
+- [React Router DOM](https://reactrouter.com/en/main)
+- [ReactJS](https://react.dev/)
+- [JavaScript](https://www.javascript.com/)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+- [HTML](https://html.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<h2 align="center">Requisitos 👌</h2>
 
-### `npm run eject`
+   - Node versão 20.0
+   - Backend da aplicação encontrada em outro repositório: levinsousa/desafio-nepen-backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<h2 align="center">Como usar? 🤔</h2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```
+   - Clone este repositório:
+   $ git clone https://github.com/levinsousa/desafio-nepen-frontend.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   $ git submodule update --init
 
-## Learn More
+  ```
+  - Front-end
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```
+   - Entre no diretório:
+   $ cd desafio-nepen-frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   - Para instalar as dependencias:
+    com npm
+      $ npm install
 
-### Code Splitting
+   - Execute a aplicação:
+    with npm
+      $ npm run start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   - Front-end rodando no seu navegador:
+   http://localhost:3000/ 
+  ```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   >Desenvolvido por **[@Levi Nunes de Sousa](https://www.linkedin.com/in/levinsousa/)**
